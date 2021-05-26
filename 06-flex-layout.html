@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex layout</title>
+<style>
+    header, footer {
+        background: pink;
+        height: 100px;
+    }
+    section {
+        display: flex;
+        height: 500px;
+    }
+    .left, .right {
+        background: coral;
+        flex: 1;
+    }
+    main {
+        background: teal;
+        flex: 5;
+    }
+    
+    @media (max-width: 768px) {
+        section {
+            flex-direction: column;
+        }
+        main {
+            order: -1;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <header>
+        header
+    </header>
+    <section>
+        <article class="left">
+            left
+        </article>
+        <main>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto ex ullam fuga alias, nobis vitae ducimus quibusdam quod saepe inventore adipisci nulla. Dolor ipsum reprehenderit id quo beatae sed esse.
+        </main>
+        <article class="right">
+            right
+        </article>
+    </section>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

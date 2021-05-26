@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flex review</title>
+<style>
+    .container {
+        width: 960px;
+        height: 500px;
+        border: 1px solid #000;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column; /* justify와 align이 반대로됨 */
+        /* flex-direction: column-reverse; */
+        /* flex-direction: row-reverse; */
+        justify-content: flex-start; /* row축 정렬 */
+        align-items: flex-start; /* 교차축 정렬 */
+        align-content: center;
+        
+    }
+
+    .item {
+        width: 100px;
+        height: 100px; /* 높이값 없으면 늘어남 */
+        background: gold;
+        /* flex-shrink: 0; */ /* default 1, 0:false */
+    }
+
+    /* order : 엘리먼트 순서가 아닌 시각적으로 보여지는 것만 옮겨줌 */
+    .item:nth-child(1) {
+        background: coral;
+        order: 3;
+    }
+    .item:nth-child(2) {
+        background: skyblue;
+        order: 1;
+        flex: 5;
+    }
+    .item:nth-child(3) {
+        background: pink;
+        order: -1;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">7</div>
+        <div class="item">7</div>
+        <div class="item">7</div>
+        <div class="item">7</div>
+    </div>
+</body>
+</html>
